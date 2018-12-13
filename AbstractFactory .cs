@@ -2,12 +2,12 @@
 void Main()
 {
 	var ironDoorFactory = new IronDoorFactory();
-	Console.WriteLine(ironDoorFactory.MakeDoor());
-	Console.WriteLine(ironDoorFactory.MakeDoorFittingExpert());
-	
+	ironDoorFactory.MakeDoor().getDescription();
+	ironDoorFactory.MakeDoorFittingExpert().getDescription();
+	Console.WriteLine("-------------------------");
 	var woodenDoorFactory = new WoodenDoorFactory();
-	Console.WriteLine(woodenDoorFactory.MakeDoor());
-	Console.WriteLine(woodenDoorFactory.MakeDoorFittingExpert());
+	woodenDoorFactory.MakeDoor().getDescription();
+	woodenDoorFactory.MakeDoorFittingExpert().getDescription();
 	
 }
 
@@ -49,7 +49,7 @@ public class Carpenter : DoorFittingExpert
 {
 	public void getDescription()
 	{
-		Console.WriteLine("this is welder");
+		Console.WriteLine("this is carpenter");
 	}
 }
  public abstract class DoorFactory<TDoorType,TDoorFittingExpert>
